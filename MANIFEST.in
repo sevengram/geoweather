@@ -1,0 +1,2 @@
+include geoweather/sql/geocodes.sql
+global-exclude *.pyc
