@@ -9,10 +9,6 @@ from geoweather import db
 bp = Blueprint('weather', __name__)
 
 
-def is_ascii(s):
-  return all(ord(c) < 128 for c in s)
-
-
 @bp.route('/weather')
 def weather():
   query = request.args.get('query')

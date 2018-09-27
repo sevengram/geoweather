@@ -4,3 +4,6 @@ venv/
 
 instance/
 .pytest_cache/
+build/
+dist/
+*.egg-info/
