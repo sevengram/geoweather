@@ -2,7 +2,7 @@ import urllib.parse
 from collections import OrderedDict
 
 import requests
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, request, jsonify, current_app
 
 from geoweather import db
 
@@ -13,6 +13,7 @@ bp = Blueprint('weather', __name__)
 def weather():
   query = request.args.get('query')
   language = request.args.get('lang', 'zh-CN' if is_chinese(query) else 'en')
+  config = current_app.config
 
   db_client = db.get_db()
   query_result = db_client.execute(
@@ -23,7 +24,7 @@ def weather():
     response = requests.get('https://maps.googleapis.com/maps/api/geocode/json',
                             params={
                               'address': query,
-                              'key': 'AIzaSyAAVJS0ynSgxnjOlYXB2MOWBBljvmofEp8',
+                              'key': config['GEOCODING_API_KEY'],
                               'language': language})
     json_response = response.json()
     if json_response['status'] == 'OK':

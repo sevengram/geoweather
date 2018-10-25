@@ -12,7 +12,8 @@ def test_weather_cached(client):
     'formatted_address': 'Shanghai, China',
     'longitude': 121.47,
     'latitude': 31.23,
-    '7timer_url': 'http://www.7timer.info/bin/astro.php?lang=en&lat=31.23&lon=121.47'
+    '7timer_url':
+      'http://www.7timer.info/bin/astro.php?lang=en&lat=31.23&lon=121.47'
   }
 
 
@@ -39,7 +40,8 @@ def test_weather_non_cached(client):
       'formatted_address': '\u4e2d\u56fd\u5317\u4eac',
       'longitude': 116.41,
       'latitude': 39.91,
-      '7timer_url': 'http://www.7timer.info/bin/astro.php?lang=zh-CN&lat=39.91&lon=116.41'
+      '7timer_url':
+        'http://www.7timer.info/bin/astro.php?lang=zh-CN&lat=39.91&lon=116.41'
     }
 
 
