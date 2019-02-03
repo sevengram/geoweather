@@ -1,3 +1,4 @@
+import time
 import urllib.parse
 from collections import OrderedDict
 
@@ -56,6 +57,7 @@ def weather():
       'lon': longitude,
       'lat': latitude,
       'lang': language,
+      'time': int(time.time())
     })})
 
 
